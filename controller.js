@@ -1,3 +1,8 @@
+let backgroundSound = new Audio('./lyder/background-theme.mp3');
+	backgroundSound.loop = true;
+	backgroundSound.volume = 0.03;
+	backgroundSound.play();
+
 function attackSlag() {
 	
 	if (criticalHit() < 90 && erlend.helse > 0) {

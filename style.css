@@ -4,7 +4,7 @@ html {
 	font-family: sans-serif;
 	color: black;
 	background-color: #121212;
-	background-image: url('/bilder/final-destination.jpg');
+	background-image: url('./bilder/final-destination.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
