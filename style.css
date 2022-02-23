@@ -1,14 +1,179 @@
 html {
-	max-width: 100ch;
-	padding: 2ch;
-	margin: auto;
+	margin: 0;
 	font-size: 1.2em;
 	font-family: sans-serif;
-	color: aliceblue;
+	color: black;
 	background-color: #121212;
+	background-image: url('/bilder/final-destination.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: center;
 }
 
-.healthbar {
+.healthbarRight {
 	height: 30px;
 	background-color: green;
+	border-style: double;
+	border-radius: 10px;
+}
+
+.healthbarLeft {
+	height: 30px;
+	background-color: green;
+	border-style: double;
+	border-radius: 10px;
+}
+
+img {
+	position:flex;
+	max-height: 410px;
+	max-width: 410px;
+
+}
+
+.Footer{
+	grid-area: Footer;
+	margin:auto;
+	margin-top: 200px;
+}
+
+.battleText {
+	grid-area: Header;
+	display: flex;
+	margin:auto;
+}
+.Therese {
+	grid-area: Therese;
+	margin:auto;
+}
+
+.Erlend {
+	grid-area: Erlend;
+	margin:auto;
+}
+.gridlayout {
+	display: grid;
+	grid-template-areas:
+		'Header Header Header Header'
+		'Therese Therese Erlend Erlend'
+		'Footer Footer Footer Footer';
+}
+
+.myButton {
+	box-shadow: 3px 4px 0px 0px #1564ad;
+	background:linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
+	background-color:#79bbff;
+	border-radius:29px;
+	border:2px solid #337bc4;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	font-weight:bold;
+	padding:12px 52px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #528ecc;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #378de5 5%, #79bbff 100%);
+	background-color:#378de5;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+.erlendBilde {
+	animation: erlend 1s;
+	animation-iteration-count: infinite;
+	display:'';
+}
+
+.thereseBilde {
+	animation: therese 1.3s;
+	animation-iteration-count: infinite;
+}
+
+.erlendHit {
+	animation: erlendHit 0.5s;
+}
+
+.thereseHit {
+	animation: thereseHit 0.5s;
+}
+
+.thereseLost {
+	animation: thereseLost 0.5s;
+}
+
+.erlendLost {
+	animation: erlendLost 0.5s;
+}
+
+@keyframes erlend {
+	0% {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(10px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
+}
+
+@keyframes therese {
+	0% {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(10px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
+}
+
+@keyframes erlendHit {
+	0% {
+		transform: translateX(0px);
+	}
+	50% {
+		transform: translateX(-200px);
+	}
+	100% {
+		transform: translateX(0px);
+	}
+}
+
+@keyframes thereseHit {
+	0% {
+		transform: translateX(0px);
+	}
+	50% {
+		transform: translateX(200px);
+	}
+	100% {
+		transform: translateX(0px);
+	}
+}
+
+@keyframes thereseLost {
+	0% {
+		transform: translateX(0px);
+	}
+	100% {
+		transform: translateX(-1000px);
+	}
+}
+
+@keyframes erlendLost {
+	0% {
+		transform: translateX(0px);
+	}
+	100% {
+		transform: translateX(1000px);
+	}
 }

@@ -1,3 +1,4 @@
+var battleText = ' ';
 const model = {
 	mainTitle: 'Death Academy',
 
@@ -11,20 +12,17 @@ const model = {
 		},
 		{
 			navn: 'Erlend',
-			bilde: 'Erlend.jpg',
+			bilde: 'PandaErlendPNG.png',
 			helse: 250,
 			slag: 5,
 			spark: 10,
-		},
-		{
-			navn: 'Linn',
-			bilde: 'linn.jpg',
-			helse: 50,
-			slag: 30,
-			spark: 35,
 		},
 	],
 };
 var therese = model.spiller[0];
 var erlend = model.spiller[1];
 var buttons = false;
+var thereseHit = false;
+var erlendHit = false;
+var thereseLost = false;
+var erlendLost = false;
