@@ -1,4 +1,4 @@
-var battleText = ' ';
+var battleText = 'Therese VS. Erlend!!';
 const model = {
 	mainTitle: 'Death Academy',
 
@@ -6,14 +6,14 @@ const model = {
 		{
 			navn: 'Therese',
 			bilde: 'chefTherese.png',
-			helse: 100,
+			helse: 5,
 			slag: 10,
 			spark: 25,
 		},
 		{
 			navn: 'Erlend',
 			bilde: 'PandaErlendPNG.png',
-			helse: 250,
+			helse: 25,
 			slag: 5,
 			spark: 10,
 		},
@@ -26,3 +26,5 @@ var thereseHit = false;
 var erlendHit = false;
 var thereseLost = false;
 var erlendLost = false;
+var erlendDisplay = true;
+var thereseDisplay = true;

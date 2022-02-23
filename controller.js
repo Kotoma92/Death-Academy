@@ -1,7 +1,10 @@
-let backgroundSound = new Audio('./lyder/background-theme.mp3');
+playBackgroundSound();
+function playBackgroundSound(){
+	let backgroundSound = new Audio('./lyder/background-theme.mp3');
 	backgroundSound.loop = true;
 	backgroundSound.volume = 0.03;
 	backgroundSound.play();
+}
 
 function attackSlag() {
 	

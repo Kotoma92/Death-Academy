@@ -6,13 +6,13 @@ function showView() {
       <div class="battleText">${battleText}</div>
       <div class="Therese">
         <div>Therese</div>
-        <div class="healthbarLeft" style="width:${therese.helse}px"> ${therese.helse}</div>
+        <div class="healthbarLeft" style="width:${therese.helse}px"> ${therese.helse}HP</div>
         <img class="thereseBilde ${thereseHit ? 'thereseHit' : ''}${thereseLost ? 'thereseLost' : ''}" src="./bilder/${therese.bilde}"/>
       </div>
     
       <div class="Erlend">
         <div>Erlend</div>
-        <div class="healthbarRight" style="width:${erlend.helse}px"> ${erlend.helse}</div>
+        <div class="healthbarRight" style="width:${erlend.helse}px"> ${erlend.helse}HP</div>
         <img class ="erlendBilde ${erlendHit ? 'erlendHit' : ''}${erlendLost ? 'erlendLost' : ''}" src="./bilder/${erlend.bilde}"/>
       </div>
 

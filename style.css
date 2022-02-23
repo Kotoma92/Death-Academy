@@ -175,5 +175,6 @@ img {
 	}
 	100% {
 		transform: translateX(1000px);
+		visibility: hidden;
 	}
 }
