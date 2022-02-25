@@ -6,14 +6,14 @@ const model = {
 		{
 			navn: 'Therese',
 			bilde: 'chefTherese.png',
-			helse: 5,
+			helse: 100,
 			slag: 10,
 			spark: 25,
 		},
 		{
 			navn: 'Erlend',
 			bilde: 'PandaErlendPNG.png',
-			helse: 25,
+			helse: 250,
 			slag: 5,
 			spark: 10,
 		},
@@ -28,3 +28,4 @@ var thereseLost = false;
 var erlendLost = false;
 var erlendDisplay = true;
 var thereseDisplay = true;
+var endedGame;

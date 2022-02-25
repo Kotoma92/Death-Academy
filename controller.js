@@ -1,13 +1,11 @@
-playBackgroundSound();
-function playBackgroundSound(){
+function playBackgroundSound() {
 	let backgroundSound = new Audio('./lyder/background-theme.mp3');
-	backgroundSound.loop = true;
-	backgroundSound.volume = 0.03;
-	backgroundSound.play();
+    backgroundSound.loop = true;
+    backgroundSound.volume = 0.03;
+    backgroundSound.play();
 }
 
 function attackSlag() {
-	
 	if (criticalHit() < 90 && erlend.helse > 0) {
 		battleText = 'Therese critta Erlend for 20 skade med et slag!';
 		erlend.helse -= therese.slag * 2;
@@ -21,7 +19,9 @@ function attackSlag() {
 		erlendLost = true;
 		thereseHit = false;
 		erlendHit = false;
+		endedGame = true;
 		showView();
+		setTimeout(endedGameView, 1000);
 		return;
 	}
 	thereseHit = true;
@@ -29,8 +29,8 @@ function attackSlag() {
 	let lyd = new Audio('./lyder/punch.mp3');
 	lyd.volume = 0.1;
 	lyd.play();
-	setTimeout(npcHit, 2000);
 	showView();
+	setTimeout(npcHit, 2000);
 }
 
 function attackSpark() {
@@ -48,7 +48,9 @@ function attackSpark() {
 		erlendLost = true;
 		thereseHit = false;
 		erlendHit = false;
+		endedGame = true;
 		showView();
+		setTimeout(endedGameView, 1000);
 		return;
 	}
 	thereseHit = true;
@@ -56,41 +58,48 @@ function attackSpark() {
 	let lyd = new Audio('./lyder/kick.mp3');
 	lyd.volume = 0.2;
 	lyd.play();
-	setTimeout(npcHit, 2000);
 	showView();
+	setTimeout(npcHit, 2000);
 }
 
 function npcHit() {
-	if (therese.helse <= 0) {
-		(therese.helse = 0), (battleText = 'Therese is Toast :(.');
-		buttons = true;
-		thereseLost = true;
-		thereseHit = false;
-		erlendHit = false;
+	if (missHit() < 20) {
+		battleText = 'Erlend bomma på Therese :D';
+		buttons = false;
+		let lyd = new Audio('./lyder/miss.mp3');
+		lyd.play();
+		therese.hit = false;
 		showView();
 		return;
 	} else {
-		if (missHit() < 20) {
-			battleText = 'Erlend bomma på Therese :D';
-			buttons = false;
-			let lyd = new Audio('./lyder/miss.mp3');
+		if (npcHitsWithWhat() > 50) {
+			battleText = 'Erlend sparket Therese for 10 skade. AU!';
+			therese.helse -= erlend.spark;
+			let lyd = new Audio('./lyder/kick.mp3');
+			lyd.volume = 0.2;
 			lyd.play();
-			thereseHit = false;
-			showView();
-			return;
+			buttons = false;
 		} else {
-			if (npcHitsWithWhat() > 50) {
-				battleText = 'Erlend sparket Therese for 10 skade. AU!';
-				therese.helse -= erlend.spark;
-				buttons = false;
-			} else {
-				battleText = 'Erlend slo Therese for 5 skade. liten au!';
-				therese.helse -= erlend.slag;
-				buttons = false;
-			}
+			battleText = 'Erlend slo Therese for 5 skade. liten au!';
+			therese.helse -= erlend.slag;
+			let lyd = new Audio('./lyder/punch.mp3');
+			lyd.volume = 0.1;
+			lyd.play();
+			buttons = false;
 		}
-		erlendHit = true;
+		if (therese.helse <= 0) {
+			(therese.helse = 0), (battleText = 'Therese is Toast :(.');
+			buttons = true;
+			thereseLost = true;
+			thereseHit = false;
+			erlendHit = false;
+			endedGame = false;
+			showView();
+			setTimeout(endedGameView, 1000);
+			return;
 	}
+	erlendHit = true;
+}
 	thereseHit = false;
 	showView();
 	erlendHit = false;

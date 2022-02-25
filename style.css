@@ -9,6 +9,21 @@ html {
 	background-size: cover;
 	background-attachment: fixed;
 	background-position: center;
+	overflow: hidden;
+}
+
+.startFight{
+	display:flex;
+	justify-content: center;
+	margin-top: 30vh;
+	margin-bottom: 50vh;
+}
+
+.endedGame{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 30vh;
 }
 
 .healthbarRight {
@@ -27,21 +42,22 @@ html {
 
 img {
 	position:flex;
-	max-height: 410px;
-	max-width: 410px;
+	max-height: 40vh;
+	max-width: 40vh;
 
 }
 
 .Footer{
 	grid-area: Footer;
 	margin:auto;
-	margin-top: 200px;
+	margin-top: 31vh;
 }
 
 .battleText {
 	grid-area: Header;
 	display: flex;
 	margin:auto;
+	font-size: 1.5em;
 }
 .Therese {
 	grid-area: Therese;
@@ -105,11 +121,19 @@ img {
 }
 
 .thereseLost {
-	animation: thereseLost 0.5s;
+	animation: thereseLost 1s;
 }
 
 .erlendLost {
-	animation: erlendLost 0.5s;
+	animation: erlendLost 1s;
+}
+
+.erlendGone {
+	opacity: 0;
+}
+
+.thereseGone {
+	opacity: 0;
 }
 
 @keyframes erlend {
@@ -175,6 +199,5 @@ img {
 	}
 	100% {
 		transform: translateX(1000px);
-		visibility: hidden;
 	}
 }

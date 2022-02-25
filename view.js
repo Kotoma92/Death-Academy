@@ -1,7 +1,17 @@
-showView();
-function showView() {
-	document.getElementById('app').innerHTML = /*HTML*/ `
+showStart();
+function showStart() {
+  document.getElementById('app').innerHTML = /*HTML*/ `
+  <div style="display:flex;justify-content:center;margin-top:20vh" class="battleText">Welcome to Death Academy</div>
+  <div class="startFight">
+  <button class="myButton" onclick="showView(),playBackgroundSound()">START FIGHT!</button>
+  
+  </div>
+  
+  `
+}
 
+function showView() { 
+	document.getElementById('app').innerHTML = /*HTML*/ `
     <div class="gridlayout">
       <div class="battleText">${battleText}</div>
       <div class="Therese">
@@ -24,4 +34,14 @@ function showView() {
     </div>
 
 `;
+}
+
+function endedGameView(){
+  document.getElementById('app').innerHTML = /*HTML*/ `
+  <div style="display:flex;justify-content:center" class="battleText">${endedGame ? 'Therese won!' : 'Erlend won!'}</div>
+  <div class="endedGame">
+  <img src="./bilder/${endedGame ? therese.bilde : erlend.bilde}"/>
+  </div>
+  
+  `
 }
